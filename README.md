@@ -36,11 +36,24 @@ Material 3, and Material Icons Extended.
 The complete project was compiled successfully with Gradle
 `:app:assembleDebug`; the packaged debug APK is included beside the source zip.
 
-## Continuous integration
+## Web component gallery
 
-Every push and pull request runs `.github/workflows/build-debug-apk.yml`.
-The workflow installs Android SDK 35, builds `:app:assembleDebug`, and uploads
-the generated APK as a GitHub Actions artifact retained for 14 days.
+The repository includes an assistant-ui-style website with a Kotlin source
+viewer and an interactive phone preview for all ten components.
+
+```bash
+npm run build:web
+npm run dev:web
+```
+
+`zerops.yaml` builds the static site and deploys the generated `dist/`
+directory to a Zerops Static service.
+
+## Manual APK build
+
+The APK no longer builds on every commit. Open GitHub Actions and manually run
+**Build debug APK (manual)** when an Android package is needed. The workflow
+uploads the generated APK as an artifact retained for 14 days.
 
 ## Fidelity
 
