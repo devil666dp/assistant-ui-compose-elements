@@ -36,18 +36,18 @@ Material 3, and Material Icons Extended.
 The complete project was compiled successfully with Gradle
 `:app:assembleDebug`; the packaged debug APK is included beside the source zip.
 
-## Web component gallery
+## Compose/Wasm component gallery
 
-The repository includes an assistant-ui-style website with a Kotlin source
-viewer and an interactive phone preview for all ten components.
+The repository includes an assistant-ui-style website whose component previews
+are rendered by real Kotlin/Wasm and Compose Multiplatform code in the browser.
 
 ```bash
-npm run build:web
-npm run dev:web
+gradle -PwebOnly=true :webApp:wasmJsBrowserDevelopmentRun
+gradle -PwebOnly=true :webApp:wasmJsBrowserDistribution
 ```
 
-`zerops.yaml` builds the static site and deploys the generated `dist/`
-directory to a Zerops Static service.
+Every push to `main` builds the production WebAssembly bundle and deploys it to
+GitHub Pages.
 
 ## Manual APK build
 
